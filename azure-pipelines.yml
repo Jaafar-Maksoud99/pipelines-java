@@ -8,7 +8,7 @@ trigger:
 
 strategy:
   matrix:
-    jdk17_linux:
+    jdk10_linux:
       imageNameaaa: "ubuntu-latest"
       jdkVersion: "1.10"
     jdk11_windows:
