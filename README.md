@@ -1,4 +1,4 @@
-
+[![Build Status](https://dev.azure.com/RVAed/MARKETview%20Education%20Technology/_apis/build/status%2FJaafar-Maksoud99.pipelines-java?branchName=main)](https://dev.azure.com/RVAed/MARKETview%20Education%20Technology/_build/latest?definitionId=102&branchName=main)
 # Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
