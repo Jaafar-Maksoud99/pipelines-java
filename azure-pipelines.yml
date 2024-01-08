@@ -6,16 +6,18 @@
 trigger:
 - main
 
-
-pool:
-  vmImage: "ubuntu-latest"
 strategy:
   matrix:
-    jdk10:
-      jdkVersion: "1.10"
-    jdk11:
+    jdk17_linux:
+      imageNameaaa: "ubuntu-latest"
+      jdkVersion: "1.17"
+    jdk11_windows:
+      imageNameaaa: "windows-latest"
       jdkVersion: "1.11"
   maxParallel: 2
+
+pool:
+  vmImage: $(imageNameaaa)
 
 
 steps:
