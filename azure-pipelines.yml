@@ -9,16 +9,16 @@ trigger:
 
 
 
-   
--
-pool:
-  vmImage: $(imageNameaaa)
 variables:
  - name: imageNameaaaa
    value: "ubuntu-latest"
  - name: jdkVersion
    value: "1.10"
  - group: secretrotation
+
+pool:
+  vmImage: $(imageNameaaa)
+
 
 
 steps:
