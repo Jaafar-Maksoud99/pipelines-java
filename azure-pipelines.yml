@@ -26,7 +26,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      echo "REACT_APP_ATOM_API_ENDPOINT = $(REACT_APP_ATOM_API_ENDPOINT)" >> temp.txt
+      echo "REACT_APP_ATOM_API_ENDPOINT = $(REACT-APP-ATOM-API-ENDPOINT)" >> temp.txt
       echo "REACT_APP_ATOM_API_CODE = $(REACT_APP_ATOM_API_CODE)" >> temp.txt
       echo "REACT_APP_AUTH_LOGIN_REDIRECT_URI = $(REACT_APP_AUTH_LOGIN_REDIRECT_URI)" >> temp.txt
       echo "REACT_APP_AUTH_LOGOUT_REDIRECT_URI = $(REACT_APP_AUTH_LOGOUT_REDIRECT_URI)" >> temp.txt
