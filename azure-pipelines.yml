@@ -11,7 +11,7 @@ trigger:
 
 variables:
  - name: imageNameaaa
-   value: "ubuntu-latest"
+   value: "windows-latest"
  - name: jdkVersion
    value: "1.10"
  - group: secretrotation
