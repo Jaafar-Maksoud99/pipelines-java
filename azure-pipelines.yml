@@ -34,6 +34,7 @@ steps:
       echo "REACT_APP_AUTH_AUTHORITY = $(REACT-APP-AUTH-AUTHORITY)" >> temp.txt
       echo "REACT_APP_ATOM_AUTH_ENTERPRISE_APP_ID = $(REACT_APP_ATOM_AUTH_ENTERPRISE_APP_ID)" >> temp.txt
       echo "REACT_APP_ATOM_AUTH_APP_REGISTRATION_ID = $(REACT_APP_ATOM_AUTH_APP_REGISTRATION_ID)" >> temp.txt
+      cat temp.txt
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
