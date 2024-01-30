@@ -35,7 +35,7 @@ steps:
       echo "REACT_APP_ATOM_AUTH_ENTERPRISE_APP_ID = $(REACT-APP-ATOM-AUTH-ENTERPRISE-APP-ID)" >> $(Build.SourcesDirectory)/temp.txt
       echo "REACT_APP_ATOM_AUTH_APP_REGISTRATION_ID = $(REACT-APP-ATOM-AUTH-APP-REGISTRATION-ID)" >> $(Build.SourcesDirectory)/temp.txt
       echo $(Build.SourcesDirectory)
-      cat$(Build.SourcesDirectory)/temp.txt
+      cat $(Build.SourcesDirectory)/temp.txt
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
