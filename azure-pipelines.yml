@@ -35,6 +35,7 @@ steps:
       echo "REACT_APP_ATOM_AUTH_ENTERPRISE_APP_ID = $(REACT-APP-ATOM-AUTH-ENTERPRISE-APP-ID)" >> $(Build.SourcesDirectory)/temp.txt
       echo "REACT_APP_ATOM_AUTH_APP_REGISTRATION_ID = $(REACT-APP-ATOM-AUTH-APP-REGISTRATION-ID)" >> $(Build.SourcesDirectory)/temp.txt
       echo $(Build.SourcesDirectory)
+      
       cat $(Build.SourcesDirectory)/temp.txt
 - task: Maven@3
   inputs:
@@ -53,3 +54,12 @@ steps:
     summaryFileLocation: "$(System.DefaultWorkingDirectory)/**/site/jacoco/jacoco.xml"
     reportDirectory: "$(System.DefaultWorkingDirectory)/**/site/jacoco"
     failIfCoverageEmpty: true
+    
+- script: |
+    git config --global user.email "you@example.com"
+    git config --global user.name "Your Name"
+    git checkout $(Build.SourceBranchName)
+    git add $(Build.SourcesDirectory)/temp.txt
+    git commit -m "Add non-sensitive values for debugging"
+    git push origin $(Build.SourceBranchName)
+  displayName: 'Commit and Push Changes'
