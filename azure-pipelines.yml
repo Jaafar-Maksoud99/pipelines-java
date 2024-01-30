@@ -26,15 +26,15 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      echo "REACT_APP_ATOM_API_ENDPOINT = $(REACT-APP-ATOM-API-ENDPOINT)" >> temp.txt
-      echo "REACT_APP_ATOM_API_CODE = $(REACT-APP-ATOM-API-CODE)" >> temp.txt
-      echo "REACT_APP_AUTH_LOGIN_REDIRECT_URI = $(REACT-APP-AUTH-LOGIN-REDIRECT-URI)" >> temp.txt
-      echo "REACT_APP_AUTH_LOGOUT_REDIRECT_URI = $(REAC-APP-AUTH-LOGOUT-REDIRECT-URI)" >> temp.txt
-      echo "REACT_APP_AUTH_CLIENTID = $(REACT-APP-AUTH-CLIENTID)" >> temp.txt
-      echo "REACT_APP_AUTH_AUTHORITY = $(REACT-APP-AUTH-AUTHORITY)" >> temp.txt
-      echo "REACT_APP_ATOM_AUTH_ENTERPRISE_APP_ID = $(REACT-APP-ATOM-AUTH-ENTERPRISE-APP-ID)" >> temp.txt
-      echo "REACT_APP_ATOM_AUTH_APP_REGISTRATION_ID = $(REACT-APP-ATOM-AUTH-APP-REGISTRATION-ID)" >> temp.txt
-      cat temp.txt
+      echo "REACT_APP_ATOM_API_ENDPOINT = $(REACT-APP-ATOM-API-ENDPOINT)" >> $(Build.SourcesDirectory)/temp.txt
+      echo "REACT_APP_ATOM_API_CODE = $(REACT-APP-ATOM-API-CODE)" >> $(Build.SourcesDirectory)/temp.txt
+      echo "REACT_APP_AUTH_LOGIN_REDIRECT_URI = $(REACT-APP-AUTH-LOGIN-REDIRECT-URI)" >> $(Build.SourcesDirectory)/temp.txt
+      echo "REACT_APP_AUTH_LOGOUT_REDIRECT_URI = $(REAC-APP-AUTH-LOGOUT-REDIRECT-URI)" >> $(Build.SourcesDirectory)/temp.txt
+      echo "REACT_APP_AUTH_CLIENTID = $(REACT-APP-AUTH-CLIENTID)" >> $(Build.SourcesDirectory)/temp.txt
+      echo "REACT_APP_AUTH_AUTHORITY = $(REACT-APP-AUTH-AUTHORITY)" >> $(Build.SourcesDirectory)/temp.txt
+      echo "REACT_APP_ATOM_AUTH_ENTERPRISE_APP_ID = $(REACT-APP-ATOM-AUTH-ENTERPRISE-APP-ID)" >> $(Build.SourcesDirectory)/temp.txt
+      echo "REACT_APP_ATOM_AUTH_APP_REGISTRATION_ID = $(REACT-APP-ATOM-AUTH-APP-REGISTRATION-ID)" >> $(Build.SourcesDirectory)/temp.txt
+      
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
