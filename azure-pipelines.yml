@@ -60,4 +60,4 @@ steps:
     azureSubscription: 'mvet-principal-r&d'
     Destination: 'AzureBlob'
     storage: 'secretrotationrgstorage'
-    ContainerName: 'atom env variables blob'
+    ContainerName: 'atomenvvariablesblob'
