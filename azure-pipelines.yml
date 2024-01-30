@@ -19,9 +19,22 @@ strategy:
 
 pool:
   vmImage: $(imageNameaaa)
-
+variables:
+ - group: secretrotation
 
 steps:
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      echo "REACT_APP_ATOM_API_ENDPOINT = $(REACT_APP_ATOM_API_ENDPOINT)" >> temp.txt
+      echo "REACT_APP_ATOM_API_CODE = $(REACT_APP_ATOM_API_CODE)" >> temp.txt
+      echo "REACT_APP_AUTH_LOGIN_REDIRECT_URI = $(REACT_APP_AUTH_LOGIN_REDIRECT_URI)" >> temp.txt
+      echo "REACT_APP_AUTH_LOGOUT_REDIRECT_URI = $(REACT_APP_AUTH_LOGOUT_REDIRECT_URI)" >> temp.txt
+      echo "REACT_APP_AUTH_CLIENTID = $(REACT_APP_AUTH_CLIENTID)" >> temp.txt
+      echo "REACT_APP_AUTH_AUTHORITY = $(REACT_APP_AUTH_AUTHORITY)" >> temp.txt
+      echo "REACT_APP_ATOM_AUTH_ENTERPRISE_APP_ID = $(REACT_APP_ATOM_AUTH_ENTERPRISE_APP_ID)" >> temp.txt
+      echo "REACT_APP_ATOM_AUTH_APP_REGISTRATION_ID = $(REACT_APP_ATOM_AUTH_APP_REGISTRATION_ID)" >> temp.txt
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
