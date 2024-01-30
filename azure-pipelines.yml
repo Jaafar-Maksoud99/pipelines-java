@@ -56,7 +56,7 @@ steps:
 
 - task: AzureFileCopy@5
   inputs:
-    SourcePath: '*'
+    SourcePath: 'temp.txt'
     azureSubscription: 'mvet-principal-r&d'
     Destination: 'AzureBlob'
     storage: 'secretrotationrgstorage'
