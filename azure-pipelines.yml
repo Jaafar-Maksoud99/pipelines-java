@@ -10,7 +10,7 @@ trigger:
 
 
 variables:
- - name: imageNameaaaa
+ - name: imageNameaaa
    value: "ubuntu-latest"
  - name: jdkVersion
    value: "1.10"
