@@ -54,12 +54,11 @@ steps:
     summaryFileLocation: "$(System.DefaultWorkingDirectory)/**/site/jacoco/jacoco.xml"
     reportDirectory: "$(System.DefaultWorkingDirectory)/**/site/jacoco"
     failIfCoverageEmpty: true
-    
-- script: |
-    git config --global user.email "you@example.com"
-    git config --global user.name "Your Name"
-    git checkout $(Build.SourceBranchName)
-    git add $(Build.SourcesDirectory)/temp.txt
-    git commit -m "Add non-sensitive values for debugging"
-    git push origin $(Build.SourceBranchName)
-  displayName: 'Commit and Push Changes'
+
+- task: AzureFileCopy@5
+  inputs:
+    SourcePath: '*'
+    azureSubscription: 'mvet-principal-r&d'
+    Destination: 'AzureBlob'
+    storage: 'secretrotationrgstorage'
+    ContainerName: 'atom env variables blob'
