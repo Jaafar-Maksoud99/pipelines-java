@@ -57,7 +57,7 @@ steps:
 - task: AzureFileCopy@5
   inputs:
     SourcePath: 'temp.txt'
-    azureSubscription: 'mvet-principal-r&d'
+    azureSubscription: 'MVET-R&D(85345bf7-3fb6-447d-86da-7c11a68ee27b)'
     Destination: 'AzureBlob'
     storage: 'secretrotationrgstorage'
-    ContainerName: 'atomenvvariablesblob'
+    ContainerName: 'envvars'
