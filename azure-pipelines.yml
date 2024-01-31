@@ -36,20 +36,26 @@ steps:
       echo "REACT_APP_ATOM_AUTH_APP_REGISTRATION_ID = $(REACT-APP-ATOM-AUTH-APP-REGISTRATION-ID)" >> temp.txt
       
       cat temp.txt
-      GITHUB_TOKEN="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"
-      git config --global user.email "jaafarabdulatheam@gmail.com"
-      git config --global user.name "Jaafar-Maksoud99"
-      echo "https://${GITHUB_TOKEN}@github.com/Jaafar-Maksoud99/pipelines-java" > .git/credentials
-      git config --global credential.helper store
-      unique_branch_name="update-temp-$(date +%Y%m%d-%H%M%S)"
-      git checkout -b $unique_branch_name
-      git add temp.txt
-      git commit -m "Update temp.txt with new environment variables"
-      echo "about to push"
-      git push https://${GITHUB_TOKEN}@github.com/Jaafar-Maksoud99/pipelines-java $unique_branch_name
+      #GITHUB_TOKEN="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"
+      #git config --global user.email "jaafarabdulatheam@gmail.com"
+      #git config --global user.name "Jaafar-Maksoud99"
+      #echo "https://${GITHUB_TOKEN}@github.com/Jaafar-Maksoud99/pipelines-java" > .git/credentials
+      #git config --global credential.helper store
+      #unique_branch_name="update-temp-$(date +%Y%m%d-%H%M%S)"
+      #git checkout -b $unique_branch_name
+      #git add temp.txt
+      #git commit -m "Update temp.txt with new environment variables"
+      #echo "about to push"
+      #git push https://${GITHUB_TOKEN}@github.com/Jaafar-Maksoud99/pipelines-java $unique_branch_name
 
 
-      
+- task: AzureFileCopy@5
+  inputs:
+    SourcePath: 'temp.txt'
+    azureSubscription: 'mvet-principal-r&d'
+    Destination: 'AzureBlob'
+    storage: 'secretrotationrgstorage'
+    ContainerName: 'envvars'
 
       
 - task: Maven@3
