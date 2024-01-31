@@ -38,10 +38,11 @@ steps:
       cat temp.txt
       git config --global user.email "jaafarabdulatheam@gmail.com"
       git config --global user.name "Jaafar99"
+      git fetch
       git checkout main
       git add temp.txt
       git commit -m "aaaaa"
-      git push 
+      git push origin main
 
 - task: Maven@3
   inputs:
