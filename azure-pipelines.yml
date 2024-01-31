@@ -38,6 +38,9 @@ steps:
       cat temp.txt
       git config --global user.email "jaafarabdulatheam@gmail.com"
       git config --global user.name "Jaafar99"
+      echo "https://${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}@github.com/Jaafar-Maksoud99/pipelines-java" > .git/credentials
+      git config --global credential.helper store
+
       git fetch
       git checkout main
       git add temp.txt
