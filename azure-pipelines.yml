@@ -38,7 +38,7 @@ steps:
       cat temp.txt
       git config --global user.email "jaafarabdulatheam@gmail.com"
       git config --global user.name "Jaafar-Maksoud99"
-      curl -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/user/repos -d '{"name":"hopefullyhasthefile"}'
+      curl -H "Authorization: token ${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}" https://api.github.com/user/repos -d '{"name":"hopefullyhasthefile"}'
       git init
       git remote add origin https://github.com/Jaafar-Maksoud99/hopefullyhasthefile.git
       git add .
