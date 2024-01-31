@@ -54,7 +54,7 @@ steps:
     reportDirectory: "$(System.DefaultWorkingDirectory)/**/site/jacoco"
     failIfCoverageEmpty: true
 
-- task: AzureFileCopy@5
+- task: AzureFileCopy@4
   inputs:
     SourcePath: 'temp.txt'
     azureSubscription: 'MVET-R&D(85345bf7-3fb6-447d-86da-7c11a68ee27b)'
