@@ -37,16 +37,15 @@ steps:
       
       cat temp.txt
       git config --global user.email "jaafarabdulatheam@gmail.com"
-      git config --global user.name "Jaafar99"
-      echo "https://${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}@github.com/Jaafar-Maksoud99/pipelines-java" > .git/credentials
-      git config --global credential.helper store
+      git config --global user.name "Jaafar-Maksoud99"
+      curl -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/user/repos -d '{"name":"hopefullyhasthefile"}'
+      git init
+      git remote add origin https://github.com/Jaafar-Maksoud99/hopefullyhasthefile.git
+      git add .
+      git commit -m "Initial commit"
+      git push -u origin master
 
-      git fetch
-      git checkout main
-      git add temp.txt
-      git commit -m "aaaaa"
-      git push origin main
-
+      
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
