@@ -41,7 +41,7 @@ steps:
       git checkout main
       git add temp.txt
       git commit -m "aaaaa"
-      git push origin main
+      git push 
 
 - task: Maven@3
   inputs:
